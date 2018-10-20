@@ -1,0 +1,127 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fafafa;
+    padding: 50px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+ul {
+    padding-left: 40px;
+}
+
+.checkbox {
+    margin-top: 200px;
+    width: 90%;
+    margin: 50px auto;
+    position: relative;
+    top: 0;
+}
+.checkbox input {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    display: block;
+    padding: 0;
+    z-index: 10;
+    pointer-events: none;
+}
+.checkbox label {
+    display: block;
+    padding-left: 40px;
+    line-height: 20px;
+    user-select: none;
+    cursor: pointer;
+}
+.checkbox label:before {
+    content: "✓";
+    display: flex;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #1a976f;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    background: #1a976f;
+    box-shadow: inset 0px 0px 0px 20px #fff;
+    transition: all 0.3s ease;
+    color: #fff;
+    font-size: 12px;
+}
+.checkbox label:after {
+    content: "";
+    display: flex;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #1a976f;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    background: #1a976f;
+    opacity: 0;
+}
+.checkbox label:before, .checkbox label:after {
+    cursor: pointer;
+}
+.checkbox label a {
+    text-decoration: none;
+    font-weight: bold;
+    color: inherit;
+}
+.checkbox label a:hover {
+    text-decoration: underline;
+}
+.checkbox input:checked + label:before, .checkbox label.checked:before {
+    box-shadow: inset 0px 0px 0px 0px #fff;
+}
+.checkbox input:checked + label:after, .checkbox label.checked:after {
+    animation: pulse 0.5s linear;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    40% {
+        transform: scale(1.4);
+        opacity: 0.4;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+code {
+    display: inline;
+    padding: 2px;
+    border: 1px solid #ccc;
+    background: #f6f6f6;
+    color: #1a976f;
+    border-radius: 4px;
+    font-size: 90%;
+}
+
+ul {
+    list-style-type: none;
+}
+ul li {
+    margin-bottom: 20px;
+}

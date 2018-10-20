@@ -1,0 +1,105 @@
+<!DOCTYPE>
+<html>
+<head>
+    <link rel="stylesheet" href="https://alexandrugatea.bitbucket.io/templates/scss-framework/css/reset-frame.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="custom.js"></script>
+
+</head>
+<body>
+<div class="relative ratio-half background-primary">
+    <img src="https://scontent-dfw5-1.cdninstagram.com/vp/4e6b15bac90f623ccf6e94de99407372/5C23CEAF/t51.2885-15/e35/35252658_483292288771161_2050478779372929024_n.jpg"
+         class="absolute absolute-full image-fit">
+
+    <div class="absolute pos-center-center text-light padding-all-20">
+        <h1>
+            Checkbox.js
+        </h1>
+    </div>
+
+</div>
+<br>
+
+<strong>Briefing</strong>
+<br>
+
+<p>
+    Please create a js functionality for <code>[type="checkbox"]</code>; <br><br>
+    <strong>Have in mind that:</strong>
+</p>
+
+<ul>
+    <li>input + label must have a common parent, <code>pretty-checkbox</code></li>
+    <li><code>inputs</code> must have <code>ID</code> attribute</li>
+    <li><code>labels</code> must have <code>FOR</code> attribute, matching input's ID</li>
+
+
+    <li>Match label's <code>FOR</code> attribute with matching <code>ID</code></li>
+    <li>
+        <hr>
+    </li>
+    <li><strong>If's</strong></li>
+
+    <li>If the wrapper doesn't exist, wrap input and label in <code>pretty-checkbox</code></li>
+    <li>If inputs do not have ID, add incremental ID on each type="checkbox" in the page"</li>
+    <li>If labels do not have FOR attr, add it, matched with corresponsing input</li>
+    <li>If input is placed before label, and both have matching ID and FOR, no js is needed</li>
+    <li>If input is placed before label, but do not have matching ID and FOR, just add ID and FOR</li>
+    <li>If input is placed inside or after the label, check with <code>JS</code> wheter the input is checked or not and
+        <code>add / remove</code> <code>class="checked"></code>on/from label
+    </li>
+    <il></il>
+</ul>
+<br>
+
+<p>
+    Please see all edge cases below.
+</p>
+
+
+<p>
+    <strong>Inputs have ID, Labels have FOR</strong>
+</p>
+
+
+<div class="checkbox">
+    <input type="checkbox" id="agreement">
+    <label for="agreement">Input is placed before the label. Working case</label>
+</div>
+
+<div class="checkbox">
+    <label for='agreement2'>Input is placed inside the label
+        <input type="checkbox" id="agreement2">
+    </label>
+</div>
+
+<div class="checkbox">
+    <label for="agreement3">Input is placed after the label</label>
+    <input type="checkbox" id="agreement3">
+</div>
+
+
+<p>
+    <strong>Inputs DO NOT have ID, Labels DO NOT have FOR</strong>
+</p>
+
+<div class="checkbox">
+    <input type="checkbox">
+    <label>Input is placed before the label.</label>
+</div>
+
+<div class="checkbox">
+    <label>Input is placed inside the label
+        <input type="checkbox">
+    </label>
+</div>
+
+<div class="checkbox">
+    <label>Input is placed after the label</label>
+    <input type="checkbox">
+</div>
+
+</body>
+</html>
